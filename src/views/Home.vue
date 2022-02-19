@@ -1,18 +1,20 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <currency></currency>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import {mapActions,mapGetters} from 'vuex'
+import Currency from "@/components/Currency";
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  components:{
+    Currency
+  },
+  methods:mapActions(['fetchCurrencies']),
+  computed:mapGetters(['currencies']),
+  async mounted() {
+    this.fetchCurrencies()
+    console.log(this.currencies)
   }
 }
 </script>
