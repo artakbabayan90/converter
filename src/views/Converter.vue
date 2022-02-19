@@ -1,5 +1,16 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <convert ></convert>
   </div>
 </template>
+
+<script>
+import Convert from '@/components/Convert'
+
+export default {
+  components:{
+    Convert
+  },
+
+}
+</script>

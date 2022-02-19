@@ -1,20 +1,14 @@
 <template>
-  <currency></currency>
+  <currency-list></currency-list>
 </template>
 
 <script>
-import {mapActions,mapGetters} from 'vuex'
-import Currency from "@/components/Currency";
+import CurrencyList from "@/components/CurrencyList";
 export default {
   name: 'Home',
   components:{
-    Currency
+    CurrencyList
   },
-  methods:mapActions(['fetchCurrencies']),
-  computed:mapGetters(['currencies']),
-  async mounted() {
-    this.fetchCurrencies()
-    console.log(this.currencies)
-  }
+
 }
 </script>
